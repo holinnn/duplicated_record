@@ -1,0 +1,30 @@
+= DuplicatedRecord
+
+Sometimes you find two records of the same real object, you can't just destroy one of them because there are some
+associations that need to be merged on the other.
+DuplicatedRecord will help by providing a #merge! method to your ORM (currently only ActiveRecord is supported)
+
+== Installation
+
+  gem install duplicated_record
+
+or in your Gemfile
+
+  gem "duplicated_record"
+
+== Usage
+
+  class Publisher < ActiveRecord::Base
+    has_many :books
+    merge_if_duplicate :books
+  end
+
+  class Book < ActiveRecord::Base
+    belongs_to :publisher
+  end
+
+  publisher1 = Publisher.find(1)
+  publisher2 = Publisher.find(2)
+
+  publisher1.merge!(publisher2)
+  # Now all books of publisher2 belongs to publisher1
