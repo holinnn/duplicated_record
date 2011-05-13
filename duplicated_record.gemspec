@@ -1,4 +1,4 @@
-# enconding: utf-8
+# encoding: utf-8
 
 $:.push File.expand_path("../lib", __FILE__)
 require "duplicated_record/version"
@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.name        = 'duplicated_record'
   s.version     = DuplicatedRecord::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Aurélien AMILIN']
+  s.authors     = ['Aurelien AMILIN']
   s.email       = ['aurelien.amilin@gmail.com']
   s.homepage    = 'https://github.com/holinnn/duplicated_resource'
   s.summary     = 'Merge duplicated records'
@@ -27,3 +27,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'spork'
   s.add_development_dependency 'database_cleaner'
 end
+
