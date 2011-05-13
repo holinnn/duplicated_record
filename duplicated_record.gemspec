@@ -1,7 +1,7 @@
 # enconding: utf-8
 
 $:.push File.expand_path("../lib", __FILE__)
-require "duplicated_record"
+require "duplicated_record/version"
 
 Gem::Specification.new do |s|
   s.name        = 'duplicated_record'
