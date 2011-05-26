@@ -6,11 +6,9 @@ DuplicatedRecord will help by providing a #merge! method to your ORM (currently 
 
 == Installation
 
-  gem install duplicated_record
+in your Gemfile
 
-or in your Gemfile
-
-  gem "duplicated_record"
+  gem "duplicated_record", :git => "git://github.com/holinnn/duplicated_record.git"
 
 == Usage
 
