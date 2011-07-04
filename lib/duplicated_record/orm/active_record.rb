@@ -42,7 +42,10 @@ module DuplicatedRecord
           association_name = reflection.name
 
           record.send(reflection.name).each do |resource|
+            begin
             self.send(association_name) << resource
+              rescue ActiveRecord::RecordInvalid
+            end
           end
 
           self.class.reset_counters(self.id, reflection.name) if counter_cache_name(reflection)
