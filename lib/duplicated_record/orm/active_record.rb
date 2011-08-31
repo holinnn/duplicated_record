@@ -43,8 +43,8 @@ module DuplicatedRecord
 
           record.send(reflection.name).each do |resource|
             begin
-            self.send(association_name) << resource
-              rescue ActiveRecord::RecordInvalid
+              self.send(association_name) << resource
+            rescue ::ActiveRecord::RecordInvalid
             end
           end
 
