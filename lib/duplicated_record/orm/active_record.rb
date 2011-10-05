@@ -1,5 +1,7 @@
 # encoding: utf-8
 
+require 'duplicated_record/orm/base'
+
 module DuplicatedRecord
   module Orm
     module ActiveRecord
@@ -60,8 +62,7 @@ module DuplicatedRecord
           end
           child_class  = reflection.klass
           belongs_to   = child_class.reflect_on_all_associations(:belongs_to)
-          child_reflection   = belongs_to.find { |e| e.class_name == expected_name }
-          child_reflection.counter_cache_column
+          child_reflection = belongs_to.find { |e| e.class_name == expected_name } and child_reflection.counter_cache_column
         end
       end
     end
